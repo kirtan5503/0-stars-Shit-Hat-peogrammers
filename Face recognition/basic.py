@@ -3,7 +3,7 @@ import numpy as np
 import face_recognition
 
 
-img1= face_recognition.load_image_file('imagesbasic/Billgates.jpg')
+img1= face_recognition.load_image_file('imagesbasic/Elonmusktestr.jpg')
 img1 = cv2.cvtColor(img1,cv2.COLOR_BGR2RGB)
 img2= face_recognition.load_image_file('imagesbasic/Elonmusk.jpg')
 img2 = cv2.cvtColor(img2,cv2.COLOR_BGR2RGB)
