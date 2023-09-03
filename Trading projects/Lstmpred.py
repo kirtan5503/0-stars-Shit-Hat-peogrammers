@@ -72,3 +72,16 @@ predictions=model.predict(x_test)
 predictions = scaler.inverse_transform(predictions)#convert back to original scale
 rmse=np.sqrt(np.mean(((predictions- y_test)**2))) #calculate rmse
 print("The root mean squared error is {}".format(rmse))
+
+train=data[:training_data_len]
+valid=data[training_data_len:]
+valid['Predictions']=predictions
+
+plt.figure(figsize=(16,8))
+plt.tittle('Model')
+plt.xlabel('Date', fontsize=18)
+plt.ylabel('Close price ', fontsize=18)
+plt.plot(train['close'])
+plt.plot(valid[['close','Predictions']])
+plt.legend(['Train','Val','Predictions'],loc='lower right')
+plt.show()
